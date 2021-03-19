@@ -36,4 +36,34 @@ qiime feature-table filter-samples \
   ```
   
   
+  ## Now calculate the core diversity metrics for each filtered table
   
+  Start with Tap water only
+  
+  ```
+  qiime diversity core-metrics-phylogenetic \
+  --i-phylogeny rooted-tree.qza \
+  --i-table tap-table.qza \
+  --p-sampling-depth 1103 \
+  --m-metadata-file uaf_water.16S.metadata.tsv \
+  --output-dir tap-core-metrics-results
+  ```
+  
+   ```
+  qiime diversity core-metrics-phylogenetic \
+  --i-phylogeny rooted-tree.qza \
+  --i-table tap-table.qza \
+  --p-sampling-depth 1103 \
+  --m-metadata-file uaf_water.16S.metadata.tsv \
+  --output-dir flush-main-core-metrics-results
+  ```
+  
+  
+  ```
+  qiime diversity core-metrics-phylogenetic \
+  --i-phylogeny rooted-tree.qza \
+  --i-table MBS-main-tap-table.qza \
+  --p-sampling-depth 1103 \
+  --m-metadata-file uaf_water.16S.metadata.tsv \
+  --output-dir flush-main-core-metrics-results
+  ```
