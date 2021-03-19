@@ -67,3 +67,15 @@ qiime feature-table filter-samples \
   --m-metadata-file uaf_water.16S.metadata.tsv \
   --output-dir flush-main-core-metrics-results
   ```
+
+
+
+Test for significance by one of the grouping factors, in this case water temp
+```
+qiime diversity beta-group-significance \
+  --i-distance-matrix tap-core-metrics-results/unweighted_unifrac_distance_matrix.qza \
+  --m-metadata-file uaf_water.16S.metadata.tsv \
+  --m-metadata-column temperature \
+  --o-visualization tap-core-metrics-results/unweighted-unifrac-temperature-significance.qzv \
+  --p-pairwise
+```
