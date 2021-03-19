@@ -10,7 +10,7 @@ Make a feature-table with only tap samples, both "cold" and "hot"
 ```
 qiime feature-table filter-samples \
   --i-table table.qza \
-  --m-metadata-file sample-metadata.tsv \
+  --m-metadata-file uaf_water.16S.metadata.tsv \
   --p-where "[water-type]='Tap'" \
   --o-filtered-table tap-table.qza
 ```
@@ -20,7 +20,7 @@ Make a feature-table with only "flush" and "main" water-type samples
 ```
 qiime feature-table filter-samples \
   --i-table table.qza \
-  --m-metadata-file sample-metadata.tsv \
+  --m-metadata-file uaf_water.16S.metadata.tsv \
   --p-where "[water-type] IN ('Flush', 'Main')" \
   --o-filtered-table flush-main-table.qza
   ```
@@ -30,7 +30,7 @@ qiime feature-table filter-samples \
   ```
   qiime feature-table filter-samples \
   --i-table table.qza \
-  --m-metadata-file sample-metadata.tsv \
+  --m-metadata-file uaf_water.16S.metadata.tsv \
   --p-where "[water-type] IN ('Tap', 'Main') AND [location]='MBS'" \
   --o-filtered-table MBS-main-tap-table.qza
   ```
